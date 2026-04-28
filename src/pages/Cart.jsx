@@ -1,8 +1,10 @@
 import { useMemo } from "react";
 import { useCart } from "../CartContext";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const { cartItems, removeFromCart, increaseQty, decreaseQty } = useCart();
+  const navigate = useNavigate();
 
   const totalPrice = useMemo(
     () =>
@@ -14,12 +16,13 @@ const Cart = () => {
   );
 
   return (
+
     /* Changed max-width to max-w-7xl to allow for the wide side-by-side look */
     <div className="max-w-7xl mx-auto text-slate-900 p-6">
       {/* 1. THE GRID CONTAINER - This creates the side-by-side effect */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-20 items-start">
         {/* LEFT CARD: PRODUCT LIST */}
-        <div className="lg:col-span-2">
+        <div className="lg:col-span-2 pt-7 ">
           <h2 className="text-2xl font-bold mb-6 border-b pb-4 text-slate-800">
             My Cart ({cartItems.length})
           </h2>
@@ -60,7 +63,7 @@ const Cart = () => {
                         if (item.quantity > 1) decreaseQty(item.id);
                         else removeFromCart(item.id);
                       }}
-                      className="w-4 h-4 flex items-center justify-center bg-red-500 text-white rounded hover:bg-red-600 transition-colors"
+                      className="w-5 h-5 flex items-center justify-center bg-red-500 text-white rounded-full hover:bg-red-600 transition-colors"
                     >
                       −
                     </button>
@@ -71,7 +74,7 @@ const Cart = () => {
 
                     <button
                       onClick={() => increaseQty(item.id)}
-                      className="w-4 h-4 flex items-center justify-center bg-green-500 text-white rounded hover:bg-green-600 transition-colors"
+                      className="w-5 h-5 flex items-center justify-center bg-green-500 text-white rounded-full hover:bg-green-600 transition-colors"
                     >
                       +
                     </button>
@@ -83,8 +86,8 @@ const Cart = () => {
         </div>
 
         {/* RIGHT CARD: COST SUMMARY */}
-        <div className="lg:col-span-1 bg-white border border-slate-200 rounded-xl p-7 shadow-md sticky top-10">
-          <h3 className="text-xm font-bold mb-6 text-slate-900 border-b pb-2">
+        <div className="lg:col-span-1 bg-white border border-slate-100 rounded-xl p-7 shadow-md sticky top-10">
+          <h3 className="text-2xl font-bold mb-6 border-b pb-4 text-slate-800">
             Order Summary
           </h3>
 
@@ -105,9 +108,12 @@ const Cart = () => {
             </span>
           </div>
 
-          <button className="w-42 bg-slate-900 text-white  text-small py-1 rounded-xs font-bold mt-6 hover:bg-slate-800 transition-transform active:scale-95">
-            Proceed to Checkout
-          </button>
+          <button
+  className="w-52 bg-slate-900 text-white text-sm py-2 rounded font-normal mt-10 hover:bg-slate-800 transition-transform active:scale-95"
+  onClick={() => navigate("/checkout")}
+>
+  Proceed to Checkout
+</button>
         </div>
       </div>
     </div>

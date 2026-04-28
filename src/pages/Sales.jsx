@@ -6,7 +6,7 @@ const Sales = () => {
     <div className="space-y-6">
       {/* Header */}
       <div>
-        <h1 className="text-xl text-slate-800">Sales Overview</h1>
+        <h1 className="text-2xl text-slate-800 font-bold text-left">Sales Overview</h1>
         <p className="text-[11px] text-slate-500 font-medium uppercase tracking-wider">Performance Tracking</p>
       </div>
 
@@ -15,7 +15,7 @@ const Sales = () => {
         
         {/* Annual Sales Card */}
         <div className="bg-white p-5 rounded-xl border border-slate-100 shadow-sm group hover:border-blue-200 transition-all">
-          <div className="flex items-center justify-between mb-3">
+          <div className="flex items-center justify-between mb-1">
             <div className="p-2 bg-blue-50 rounded-lg text-blue-600">
               <TrendingUp size={20} />
             </div>

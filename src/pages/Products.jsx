@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useCart } from "../CartContext";
 import { useNavigate } from "react-router-dom";
 import { ShoppingCart } from "lucide-react";
+import axios from "axios";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   const { cartItems, addToCart, increaseQty, decreaseQty, removeFromCart } =
     useCart();
@@ -17,14 +19,9 @@ const Products = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await fetch("https://fakestoreapi.com/products");
+        const res = await axios.get("https://fakestoreapi.com/products");
 
-        if (!res.ok) {
-          throw new Error("Failed to fetch products");
-        }
-
-        const data = await res.json();
-        setProducts(data);
+        setProducts(res.data);
       } catch (err) {
         console.error(err);
         setError(err.message);
@@ -60,21 +57,19 @@ const Products = () => {
               key={item.id}
               className="border border-slate-200 rounded-xm p-3 bg-white shadow-sm flex flex-col gap-2"
             >
-              <div className="w-full h-40 bg-slate-100 rounded-lg overflow-hidden relative">
-                {/* ✅ BADGE — MUST BE HERE */}
-                {quantity > 0 && (
-                  <span className="absolute top-1 right-2 bg-indigo-900 text-white text-[10px] px-1.5 py-[2px] rounded-full font-medium leading-none">
-                    {quantity} in cart
-                  </span>
-                )}
+              <div className="w-full h-40 bg-slate-100 rounded-lg overflow-hidden flex items-center justify-center relative">
+  {quantity > 0 && (
+    <span className="absolute top-1 right-2 bg-indigo-900 text-white text-[10px] px-1.5 py-[2px] rounded-full font-medium leading-none">
+      {quantity} in cart
+    </span>
+  )}
 
-                {/* IMAGE */}
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-32 h-32 object-contain"
-                />
-              </div>
+  <img
+    src={item.image}
+    alt={item.title}
+    className="max-h-full max-w-full object-cover object-center"
+  />
+</div>
               {/* 🔹 DETAILS */}
               <div className="h-10 mb-2">
                 {" "}
@@ -100,7 +95,7 @@ const Products = () => {
                         image: item.image,
                       })
                     }
-                    className="bg-red-500 text-white  text-xs px-1 py-1 rounded "
+                    className="bg-red-500 text-white  text-xs px-1 py-1 rounde-full "
                   >
                     Add
                   </button>
@@ -114,7 +109,7 @@ const Products = () => {
                           removeFromCart(item.id);
                         }
                       }}
-                      className="w-5 h-4.5 bg-red-600 text-white rounded"
+                      className="w-6 h-6 bg-red-500 text-white rounded-full"
                     >
                       −
                     </button>
@@ -123,7 +118,7 @@ const Products = () => {
 
                     <button
                       onClick={() => increaseQty(item.id)}
-                      className="w-5 h-4.5 bg-green-600 text-white rounded"
+                      className="w-6 h-6 bg-green-500 text-white rounded-full"
                     >
                       +
                     </button>

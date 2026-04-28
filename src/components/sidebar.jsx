@@ -41,25 +41,12 @@ const Sidebar = () => {
           </div>
           <span className="font-bold text-xl text-slate-800 dark:text-white">Parvya</span>
         </div>
-        <ChevronLeft className="text-slate-400 dark:text-slate-500 cursor-pointer" size={20} />
+        {/* <ChevronLeft className="text-slate-400 dark:text-slate-500 cursor-pointer" size={20} /> */}
       </div>
-
-      {/* SECTION 2: User Flow Block
-      <div className="px-2 mb-2">
-        <div className="bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 p-3 rounded-xl flex items-center justify-between cursor-pointer">
-          <div className="flex items-center gap-2">
-            <div className="bg-white dark:bg-slate-700 p-1 rounded shadow-sm">
-              <LayoutGrid size={16} className="text-slate-600 dark:text-slate-300" />
-            </div>
-            <span className="text-slate-600 dark:text-slate-300 text-sm font-medium">User Flow</span>
-          </div>
-          <ChevronDown size={16} className="text-slate-400 dark:text-slate-500" />
-        </div>
-      </div> */}
 
       {/* SECTION 3: Main Menu */}
       <div className="">
-        <p className="text-[11px] font-bold text-slate-400 dark:text-slate-500 px-2 py-2 uppercase tracking-wider mb-1 text-left">Main</p>
+        <p className="text-11px font-bold text-slate-400 dark:text-slate-500 px-2 py-2 uppercase tracking-wider mb-3 text-left">Main</p>
 
         <SidebarItem to="/dashboard" icon={LayoutGrid} label="Dashboard" />
         <SidebarItem to="/products" icon={ShoppingBag} label="Products" />
@@ -72,20 +59,20 @@ const Sidebar = () => {
 
       {/* SECTION 4: Settings Menu */}
       <div className="px-2">
-        <p className="text-xs font-bold text-slate-400 dark:text-slate-500 px-2 py-2 uppercase tracking-wider mb-1 text-left">Settings</p>
+        <p className="text-11px font-bold text-slate-400 dark:text-slate-500 px-2 py-2 uppercase tracking-wider mb-1 text-left">Settings</p>
 
         <SidebarItem to="/sync" icon={RefreshCw} label="MarketPlace Sync" />
-        <SidebarItem to="/payment" icon={CreditCard} label="Payment Gateways" />
+        <SidebarItem to="/About" icon={CreditCard} label="Aboutus" />
         <SidebarItem to="/settings" icon={Settings} label="Settings" />
         <SidebarItem to="/help" icon={HelpCircle} label="Help Center" />
       </div>
 
       {/* SECTION 5: Dark Mode Footer */}
-      <div className="mt-auto border-t border-slate-100 dark:border-slate-800 p-4">
+      <div className="mt-auto border-t border-slate-100 dark:border-slate-800 p-6">
         <div className="flex items-center justify-between px-2">
           <div className="flex items-center">
-            <Moon size={18} className="text-slate-600 dark:text-slate-400" />
-            <span className="text-[11px] font-medium text-slate-600 dark:text-slate-400">Dark Mode</span>
+            <Moon size={18} className="text-slate-900 dark:text-slate-900" />
+            <span className="text-[15px] font-medium text-slate-600 dark:text-slate-900">Dark Mode</span>
           </div>
           <div 
             onClick={() => setDark(!dark)} 

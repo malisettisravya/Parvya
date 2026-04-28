@@ -9,13 +9,15 @@ import Sales from './pages/Sales';
 import Customer from './pages/Customer';
 import Reports from './pages/Reports';
 import Cart from './pages/Cart';
+import Checkoutpage from './pages/Checkoutpage';
+import Settings from './pages/Settings'
+import Helpcenter from './pages/Helpcenter';
+import Aboutus from './pages/Aboutus'
 
 export default function App() {
   return (
     <Router>
-      {/* CHANGED: Added 'dark:bg-slate-950' to turn the whole screen dark */}
-      {/* CHANGED: Added 'transition-colors duration-300' for a smooth fade effect */}
-      <div className="flex min-h-screen bg-white dark:bg-slate-950 transition-colors duration-300">
+      <div className="flex  w-full min-h-screen bg-white dark:bg-slate-950 transition-colors duration-300">
         
         {/* 1. Sidebar stays always visible */}
         <Sidebar />
@@ -41,6 +43,10 @@ export default function App() {
             <Route path="/Customer" element={<Customer/>} />
             <Route path="/Reports" element={<Reports/>} />
             <Route path="/Cart"   element={<Cart/>}/>
+            <Route path="/checkout" element={<Checkoutpage/>}/>
+            <Route path="/Settings" element={<Settings/>}/>
+            <Route path="/Help" element={<Helpcenter/>}/>
+            <Route path="/About" element={<Aboutus/>}/>
           </Routes>
 
         </main>

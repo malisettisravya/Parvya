@@ -12,6 +12,13 @@ export default {
   // 3. THE DESIGN: Your custom colors and styles
   theme: {
     extend: {
+      // ADDED: This forces a larger base size and scales other utilities
+      fontSize: {
+        'xs': ['0.875rem', { lineHeight: '1.25rem' }],    // Was 12px, now 14px
+        'sm': ['1rem', { lineHeight: '1.5rem' }],       // Was 14px, now 16px
+        'base': ['1.125rem', { lineHeight: '1.75rem' }], // Was 16px, now 18px
+        'lg': ['1.25rem', { lineHeight: '1.75rem' }],    // Was 18px, now 20px
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
