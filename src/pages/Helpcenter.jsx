@@ -1,5 +1,6 @@
 import React from "react";
 import { Home, Phone, Mail } from "lucide-react";
+import bgweb from "../assets/bgweb.jpg"
 
 const Helpcenter = () => {
   return (
@@ -9,9 +10,10 @@ const Helpcenter = () => {
       <div className="relative w-full h-[420px] flex items-center justify-center">
 
         <img
-          src="/bg-web.jpg"
-          // className="absolute w-full h-full object-cover"
-        />
+  src={bgweb} 
+  alt="Background"
+  className="absolute w-full h-full object-cover"
+/>
 
         {/* Dark Overlay */}
         <div className="absolute w-full h-full bg-black/50"></div>

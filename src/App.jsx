@@ -18,6 +18,7 @@ export default function App() {
   return (
     <Router>
       <div className="flex  w-full min-h-screen bg-white dark:bg-slate-950 transition-colors duration-300">
+        <div className="flex flex-col lg:flex-row w-full min-h-screen bg-white dark:bg-slate-950">
         
         {/* 1. Sidebar stays always visible */}
         <Sidebar />
@@ -51,7 +52,10 @@ export default function App() {
 
         </main>
       </div>
+      </div>
     </Router>
+    
+  
 
   );
 }
