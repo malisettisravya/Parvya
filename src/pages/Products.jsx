@@ -37,7 +37,7 @@ const Products = () => {
     <div className="flex flex-col gap-6">
       {/* 🔹 HEADER */}
       <div className="flex justify-between items-center">
-        <h1 className="text-2xl font-bold text-slate-900">Products</h1>
+        <h1 className="text-4xl font-bold text-slate-900">Products</h1>
 
         <div className="flex items-center gap-1.5 px-3 py-1 bg-red-600 text-white rounded font-medium text-sm hover:bg-red-700 transition-colors">
           <button onClick={() => navigate("/cart")}>

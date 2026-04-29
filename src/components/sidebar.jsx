@@ -61,7 +61,7 @@ const Sidebar = () => {
       <div className="px-2">
         <p className="text-11px font-bold text-slate-400 dark:text-slate-500 px-2 py-2 uppercase tracking-wider mb-1 text-left">Settings</p>
 
-        <SidebarItem to="/sync" icon={RefreshCw} label="MarketPlace Sync" />
+        {/* <SidebarItem to="/sync" icon={RefreshCw} label="MarketPlace Sync" /> */}
         <SidebarItem to="/About" icon={CreditCard} label="Aboutus" />
         <SidebarItem to="/settings" icon={Settings} label="Settings" />
         <SidebarItem to="/help" icon={HelpCircle} label="Help Center" />

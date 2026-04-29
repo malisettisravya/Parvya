@@ -7,7 +7,7 @@ const OrderCards = () => {
       {/* --- HEADINGS SECTION --- */}
       <div className="flex flex-col text-left ">
         {/* We use !dark:text-white to make sure it's bright and visible */}
-        <h1 className="text-2xl font-bold text-slate-900 dark:text-white">
+        <h1 className="text-3xl font-bold text-slate-900 dark:text-white">
           Orders
         </h1>
         <h2 className="text-sm font-medium text-slate-500 dark:text-slate-400 flex flex-col">
